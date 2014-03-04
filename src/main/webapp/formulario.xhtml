@@ -2,66 +2,62 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui" template="template/master.xhtml">
 
-	<f:view>
-		<h:head></h:head>
-		<h:body>
-			<p:fieldset legend="Admon Usuarios">
-				<h:form>
-					<h:panelGrid columns="2">
-						<h:outputLabel value="#{m.formulario_nombre}" />
-						<h:inputText id="nombre" value="#{usuarioMB.usr.nombre}"
-							required="true">
-						</h:inputText>
+	<ui:define name="content">
+		<p:fieldset legend="Admon Usuarios">
+			<h:form>
+				<h:panelGrid columns="2">
+					<h:outputLabel value="#{m.formulario_nombre}" />
+					<h:inputText id="nombre" value="#{usuarioMB.usr.nombre}"
+						required="true">
+					</h:inputText>
 
-						<h:outputLabel value="#{m.formulario_apellido}" />
-						<h:inputText id="apellido" value="#{usuarioMB.usr.apellido}" />
+					<h:outputLabel value="#{m.formulario_apellido}" />
+					<h:inputText id="apellido" value="#{usuarioMB.usr.apellido}" />
 
-						<h:outputLabel value="#{m.formulario_edad}" />
-						<h:inputText id="edad" value="#{usuarioMB.usr.edad}" />
+					<h:outputLabel value="#{m.formulario_edad}" />
+					<h:inputText id="edad" value="#{usuarioMB.usr.edad}" />
 
-						<h:outputLabel value="Usuario" />
-						<h:inputText value="#{usuarioMB.usr.user_id}" />
+					<h:outputLabel value="Usuario" />
+					<h:inputText value="#{usuarioMB.usr.user_id}" />
 
-						<h:outputLabel value="Clave" />
-						<h:inputText value="#{usuarioMB.usr.password}" />
+					<h:outputLabel value="Clave" />
+					<h:inputText value="#{usuarioMB.usr.password}" />
 
-						<h:outputLabel value="#{m.formulario_genero}" />
-						<h:selectOneMenu value="#{usuarioMB.usr.genero}">
-							<f:selectItem itemValue="1" itemLabel="Masculino" />
-							<f:selectItem itemValue="2" itemLabel="Femenino" />
-						</h:selectOneMenu>
+					<h:outputLabel value="#{m.formulario_genero}" />
+					<h:selectOneMenu value="#{usuarioMB.usr.genero}">
+						<f:selectItem itemValue="1" itemLabel="Masculino" />
+						<f:selectItem itemValue="2" itemLabel="Femenino" />
+					</h:selectOneMenu>
 
-						<h:outputLabel value="#{m.formulario_ciudad}" />
-						<h:selectOneMenu value="#{usuarioMB.usr.ciudad_nacimiento.id}">
-							<f:selectItems value="#{usuarioMB.ciudades}" var="c"
-								itemValue="#{c.id}" itemLabel="#{c.nombre}" />
-						</h:selectOneMenu>
+					<h:outputLabel value="#{m.formulario_ciudad}" />
+					<h:selectOneMenu value="#{usuarioMB.usr.ciudad_nacimiento.id}">
+						<f:selectItems value="#{usuarioMB.ciudades}" var="c"
+							itemValue="#{c.id}" itemLabel="#{c.nombre}" />
+					</h:selectOneMenu>
 
-						<h:commandButton action="#{usuarioMB.guardar}" value="Guardar" />
-					</h:panelGrid>
-				</h:form>
+					<h:commandButton action="#{usuarioMB.guardar}" value="Guardar" />
+				</h:panelGrid>
+			</h:form>
 
-				<h:form>
-					<p:dataTable var="u" value="#{usuarioMB.lista}">
-						<p:column>
-							<f:facet name="header">Nombre</f:facet>
-							<h:outputText value="#{u.nombre}" />
-						</p:column>
-						<p:column>
-							<f:facet name="header">Apellido</f:facet>
-							<h:outputText value="#{u.apellido}" />
-						</p:column>
-						<p:column>
-							<f:facet name="header"></f:facet>
-							<h:commandLink action="#{usuarioMB.editar(u.id)}" value="Editar" />
-						</p:column>
-					</p:dataTable>
-				</h:form>
-			</p:fieldset>
+			<h:form>
+				<p:dataTable var="u" value="#{usuarioMB.lista}">
+					<p:column>
+						<f:facet name="header">Nombre</f:facet>
+						<h:outputText value="#{u.nombre}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">Apellido</f:facet>
+						<h:outputText value="#{u.apellido}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header"></f:facet>
+						<h:commandLink action="#{usuarioMB.editar(u.id)}" value="Editar" />
+					</p:column>
+				</p:dataTable>
+			</h:form>
+		</p:fieldset>
 
-		</h:body>
-	</f:view>
-
+	</ui:define>
 </ui:composition>

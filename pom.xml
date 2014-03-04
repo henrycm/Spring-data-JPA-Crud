@@ -8,6 +8,13 @@
 	<packaging>war</packaging>
 
 	<name>AdminUsuariosPrj</name>
+	<repositories>
+		<repository>
+			<id>prime-repo</id>
+			<name>Prime Repo</name>
+			<url>http://repository.primefaces.org</url>
+		</repository>
+	</repositories>
 
 	<properties>
 		<endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
@@ -60,7 +67,11 @@
 			<artifactId>primefaces</artifactId>
 			<version>4.0</version>
 		</dependency>
-
+		<dependency>
+			<groupId>org.primefaces.themes</groupId>
+			<artifactId>all-themes</artifactId>
+			<version>1.0.10</version>
+		</dependency>
 		<!-- JSR-330 -->
 		<dependency>
 			<groupId>javax.inject</groupId>
