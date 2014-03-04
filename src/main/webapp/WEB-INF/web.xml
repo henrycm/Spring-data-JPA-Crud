@@ -8,7 +8,7 @@
 	
 	<display-name>HolaMaven</display-name>
 	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.xhtml</welcome-file>
 	</welcome-file-list>
 	<context-param>
 		<param-name>org.richfaces.skin</param-name>

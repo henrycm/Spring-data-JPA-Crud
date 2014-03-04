@@ -31,7 +31,7 @@
 
 		<javax.servlet-api.version>2.5</javax.servlet-api.version>
 		<jsp-api.version>2.1</jsp-api.version>
-		<jsf-api.version>2.1.13</jsf-api.version>		
+		<jsf-api.version>2.1.13</jsf-api.version>
 		<javax.jstl-taglibs.version>1.2</javax.jstl-taglibs.version>
 		<el-impl.version>2.2</el-impl.version>
 		<jackson.version>2.1.1</jackson.version>
@@ -53,25 +53,12 @@
 		<maven.compiler.plugin.version>3.1</maven.compiler.plugin.version>
 
 	</properties>
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.richfaces</groupId>
-				<artifactId>richfaces-bom</artifactId>
-				<version>${org.richfaces.bom.version}</version>
-				<scope>import</scope>
-				<type>pom</type>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
+
 	<dependencies>
 		<dependency>
-			<groupId>org.richfaces.ui</groupId>
-			<artifactId>richfaces-components-ui</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.richfaces.core</groupId>
-			<artifactId>richfaces-core-impl</artifactId>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>4.0</version>
 		</dependency>
 
 		<!-- JSR-330 -->
