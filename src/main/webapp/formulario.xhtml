@@ -2,13 +2,12 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:a4j="http://richfaces.org/a4j"
-	xmlns:rich="http://richfaces.org/rich">
+	xmlns:p="http://primefaces.org/ui">
 
 	<f:view>
 		<h:head></h:head>
 		<h:body>
-			<rich:panel>
+			<p:fieldset legend="Admon Usuarios">
 				<h:form>
 					<h:panelGrid columns="2">
 						<h:outputLabel value="#{m.formulario_nombre}" />
@@ -45,22 +44,22 @@
 				</h:form>
 
 				<h:form>
-					<rich:dataTable value="#{usuarioMB.lista}" var="u">
-						<rich:column>
+					<p:dataTable var="u" value="#{usuarioMB.lista}">
+						<p:column>
 							<f:facet name="header">Nombre</f:facet>
 							<h:outputText value="#{u.nombre}" />
-						</rich:column>
-						<rich:column>
+						</p:column>
+						<p:column>
 							<f:facet name="header">Apellido</f:facet>
 							<h:outputText value="#{u.apellido}" />
-						</rich:column>
-						<rich:column>
+						</p:column>
+						<p:column>
 							<f:facet name="header"></f:facet>
 							<h:commandLink action="#{usuarioMB.editar(u.id)}" value="Editar" />
-						</rich:column>
-					</rich:dataTable>
+						</p:column>
+					</p:dataTable>
 				</h:form>
-			</rich:panel>
+			</p:fieldset>
 
 		</h:body>
 	</f:view>
