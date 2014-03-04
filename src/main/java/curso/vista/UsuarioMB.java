@@ -19,10 +19,10 @@ public class UsuarioMB implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private Usuario usr = new Usuario();
-	
+
 	@Autowired
 	private UsuarioBO bo;
-	
+
 	@Autowired
 	private CiudadBO ciudadBO;
 
@@ -33,7 +33,9 @@ public class UsuarioMB implements Serializable {
 	}
 
 	public List<Usuario> getLista() {
-		return bo.listar();
+		List<Usuario> ret = bo.listar();
+		System.out.println("No. Usuarios:" + ret.size());
+		return ret;
 	}
 
 	public List<Ciudad> getCiudades() {
@@ -54,7 +56,7 @@ public class UsuarioMB implements Serializable {
 	}
 
 	public void editar(int id) {
-		usr = bo.consultar(id);		
+		usr = bo.consultar(id);
 	}
 
 }
