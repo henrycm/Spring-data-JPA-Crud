@@ -8,24 +8,7 @@
 	<f:view>
 		<h:head></h:head>
 		<h:body>
-			<rich:panel>
-				<h:form>
-					<rich:dataTable value="#{usuarioMB.lista}" var="u">
-						<rich:column>
-							<f:facet name="header">Nombre</f:facet>
-							<h:outputText value="#{u.nombre}" />
-						</rich:column>
-						<rich:column>
-							<f:facet name="header">Apellido</f:facet>
-							<h:outputText value="#{u.apellido}" />
-						</rich:column>
-						<rich:column>
-							<f:facet name="header"></f:facet>
-							<h:commandLink action="#{usuarioMB.editar(u.id)}" value="Editar" />
-						</rich:column>
-					</rich:dataTable>
-				</h:form>
-			</rich:panel>
+
 		</h:body>
 	</f:view>
 </ui:composition>
