@@ -2,7 +2,9 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui" template="template/master.xhtml">
+	xmlns:p="http://primefaces.org/ui" 
+	xmlns:sec="http://www.springframework.org/security/tags"
+	template="template/master.xhtml">
 
 	<ui:define name="contenido">
 		<f:view>
@@ -55,8 +57,8 @@
 								<h:outputText value="#{u.apellido}" />
 							</p:column>
 							<p:column>
-								<f:facet name="header"></f:facet>
-								<h:commandLink action="#{usuarioMB.editar(u.id)}" value="Editar" />
+								<f:facet name="header">Acción</f:facet>								
+								<h:commandLink action="#{usuarioMB.editar(u.id)}" value="Editar" rendered="#{sec:areAnyGranted('ROLE_ADMIN')}" />
 							</p:column>
 						</p:dataTable>
 					</h:form>

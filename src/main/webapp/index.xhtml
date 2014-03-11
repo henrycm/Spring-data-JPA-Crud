@@ -2,10 +2,15 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui" template="template/master.xhtml">
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:sec="http://www.springframework.org/security/tags"
+	template="template/master.xhtml">
 
 	<ui:define name="contenido">
-		<h2>Contenido</h2>
+		<h2>Contenido</h2>		
+		<sec:authorize access="hasAnyRole('ROLE_USER')">
+			<h:outputLink value="formulario.xhtml">Formulario</h:outputLink>
+		</sec:authorize>			
 	</ui:define>
-	
+
 </ui:composition>
