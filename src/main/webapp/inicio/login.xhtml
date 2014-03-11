@@ -1,0 +1,24 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:form id="loginForm">
+		<h:panelGrid width="20%">
+			<p:outputPanel>
+				<h:panelGrid columns="2">
+					<h:outputText value="Usuario:" />
+					<h:inputText id="txtUsuario" required="true"
+						value="#{loginMB.usuario}"></h:inputText>
+					<h:outputText value="Clave:" />
+					<h:inputSecret id="clave" required="true" value="#{loginMB.clave}">
+					</h:inputSecret>
+					<h:outputText value="#{loginMB.mensaje}" />
+				</h:panelGrid>
+				<br />
+				<h:commandButton action="#{loginMB.ingresarAction()}" value="Login"/>
+			</p:outputPanel>
+		</h:panelGrid>
+	</h:form>
+</ui:composition>

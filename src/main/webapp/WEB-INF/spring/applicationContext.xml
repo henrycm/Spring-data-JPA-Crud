@@ -14,4 +14,7 @@
 
 	<!-- Imports datasource configuration -->
 	<import resource="spring-data.xml" />
+
+	<!-- Imports seguridad -->
+	<import resource="spring-security.xml" />
 </beans>
