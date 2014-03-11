@@ -8,6 +8,7 @@
 	<packaging>war</packaging>
 
 	<name>AdminUsuariosPrj</name>
+
 	<repositories>
 		<repository>
 			<id>prime-repo</id>
@@ -15,7 +16,7 @@
 			<url>http://repository.primefaces.org</url>
 		</repository>
 	</repositories>
-
+	
 	<properties>
 		<endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -38,7 +39,7 @@
 
 		<javax.servlet-api.version>2.5</javax.servlet-api.version>
 		<jsp-api.version>2.1</jsp-api.version>
-		<jsf-api.version>2.1.13</jsf-api.version>
+		<jsf-api.version>2.1.13</jsf-api.version>		
 		<javax.jstl-taglibs.version>1.2</javax.jstl-taglibs.version>
 		<el-impl.version>2.2</el-impl.version>
 		<jackson.version>2.1.1</jackson.version>
@@ -60,7 +61,7 @@
 		<maven.compiler.plugin.version>3.1</maven.compiler.plugin.version>
 
 	</properties>
-
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.primefaces</groupId>
@@ -72,6 +73,7 @@
 			<artifactId>all-themes</artifactId>
 			<version>1.0.10</version>
 		</dependency>
+
 		<!-- JSR-330 -->
 		<dependency>
 			<groupId>javax.inject</groupId>

@@ -6,7 +6,8 @@ import org.springframework.data.repository.query.Param;
 
 import curso.modelo.Usuario;
 
-public interface IUsuarioDAO extends JpaRepository<Usuario, Integer> {
+public interface UsuarioRepository extends JpaRepository<Usuario, Integer>,
+		UsuarioRepositoryCustom {
 
 	public Usuario findByNombre(String nombre);
 
