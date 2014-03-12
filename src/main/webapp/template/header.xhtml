@@ -3,9 +3,11 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:sec="http://www.springframework.org/security/tags">
 
-<h1>Bienvenido:</h1>
-<sec:authorize access="isAuthenticated()">
-	<h:outputLabel value="#{loginMB.usuario}" />
-	<a href="#{request.contextPath}/j_spring_security_logout">Salir</a>
-</sec:authorize>
+<h3>
+	Bienvenido:
+	<sec:authorize access="isAuthenticated()">
+		<h:outputLabel value="#{loginMB.usuario}" />
+		<a href="#{request.contextPath}/j_spring_security_logout">(Salir)</a>
+	</sec:authorize>
+</h3>
 </html>
