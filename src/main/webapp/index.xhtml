@@ -8,7 +8,7 @@
 
 	<ui:define name="contenido">
 		<h2>Contenido</h2>		
-		<sec:authorize access="hasAnyRole('ROLE_USER')">
+		<sec:authorize access="hasAnyRole('ROLE_ADMIN')">
 			<h:outputLink value="formulario.xhtml">Formulario</h:outputLink>
 		</sec:authorize>			
 	</ui:define>
