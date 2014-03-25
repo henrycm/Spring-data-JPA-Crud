@@ -26,7 +26,7 @@
 	<!-- Declare a datasource that has pooling capabilities -->
 	<bean id="jpaDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
 		destroy-method="close" p:driverClass="com.mysql.jdbc.Driver"
-		p:jdbcUrl="jdbc:mysql://65.167.86.94/cursodb" p:user="curso"
+		p:jdbcUrl="jdbc:mysql://localhost/cursodb" p:user="curso"
 		p:password="curso" p:acquireIncrement="5" p:idleConnectionTestPeriod="60"
 		p:maxPoolSize="5" p:maxStatements="50" p:minPoolSize="3" />
 
